@@ -9,7 +9,7 @@
     $interes_rate = 0.7/100;
     $total = $deposits;
     for ($i = 1; $i <= $year * 12;$i++){
-        $total = $total + $deposits * $interes_rate;
+        $total = $total + $total * $interes_rate;
         
         if ($i % 3 == 0) {
             $total -= (3000000 + 1000000*($i/3 -1));
