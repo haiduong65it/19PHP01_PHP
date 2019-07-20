@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="webroot/css/style.css">
 <h1>Edit User</h1>
 <form action="admin.php?controller=user&action=edit_user&id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
 	<p>

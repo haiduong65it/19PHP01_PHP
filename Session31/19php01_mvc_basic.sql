@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 13, 2019 at 08:29 PM
--- Server version: 5.7.26-0ubuntu0.16.04.1
--- PHP Version: 7.2.18-1+ubuntu16.04.1+deb.sury.org+1
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th7 20, 2019 lúc 01:32 PM
+-- Phiên bản máy phục vụ: 10.1.34-MariaDB
+-- Phiên bản PHP: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,51 +19,55 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `19php01_mvc_basic`
+-- Cơ sở dữ liệu: `19php1_mvc_basic`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
   `id` int(10) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `avatar` varchar(255) NOT NULL DEFAULT 'default.jpg'
+  `avatar` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `name` varchar(256) NOT NULL,
+  `level` char(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `avatar`) VALUES
-(3, 'admin', '6c229d66f03375a9e007ed215fd9391f', 'default.jpg'),
-(4, 'admin', '891abb37b6455f57220efc4816f6ce79', 'default.jpg'),
-(5, 'chad', 'e10adc3949ba59abbe56e057f20f883e', 'default.jpg'),
-(6, 'chad', 'e10adc3949ba59abbe56e057f20f883e', 'default.jpg');
+INSERT INTO `users` (`id`, `username`, `password`, `avatar`, `name`, `level`) VALUES
+(4, 'admin', '891abb37b6455f57220efc4816f6ce79', 'default.jpg', '', ''),
+(5, 'chad', 'e10adc3949ba59abbe56e057f20f883e', 'default.jpg', '', ''),
+(6, 'chad', 'e10adc3949ba59abbe56e057f20f883e', '5d3157374f117_messi.jpg', 'Thầy', '0'),
+(7, 'duong123', '25d55ad283aa400af464c76d713c07ad', '5d314da888f2e_ronaldo.jpg', 'Nguyễn Hải Đường', '0');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
