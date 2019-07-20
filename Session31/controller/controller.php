@@ -38,10 +38,16 @@
 					if (isset($_POST['add_user'])) {
 						$username = $_POST['username'];
 						$password = md5($_POST['password']);
-						if($model->addUser($username, $password) === TRUE){
-							header("Location: admin.php?controller=user&action=list_user");
+						$avatar = 'default.jpg';
+						if ($_FILES['avatar']['error'] == 0) {
+				            $avatar = uniqid().'_'.$_FILES['avatar']['name'];
+				            move_uploaded_file($_FILES['avatar']['tmp_name'], 'webroot/uploads/'.$avatar);
+				          }
+				        $name = $_POST['name'];
+				        $level = $_POST['level'];
+						if($model->add_user($username, $password, $avatar, $name, $level) === TRUE){
+							header("Location: admin.php?controller=user&action=login");
 						}
-						# code...
 					}
 					include 'view/user/add_user.php';
 					break;

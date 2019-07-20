@@ -3,8 +3,8 @@
 
 	class Model extends DatabaseConnect {
 
-		function addUser($username, $password) {
-			$sql = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
+		function add_user($username, $password, $avatar, $name, $level) {
+			$sql = "INSERT INTO users(username, password, avatar, name, level) VALUES ('$username', '$password', '$avatar', '$name', '$level')";
 			return mysqli_query($this->connect(), $sql);
 		}
 

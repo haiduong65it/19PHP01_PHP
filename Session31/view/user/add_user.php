@@ -15,6 +15,14 @@
 		<input type="file" name="avatar">
 	</p>
 	<p>
+		Name
+		<input type="text" name="name">
+	</p>
+	<p>
+		Level
+		<input type="text" name="level">
+	</p>
+	<p>
 		<input type="submit" name="add_user" value="Add user">
 	</p>
 </form>
