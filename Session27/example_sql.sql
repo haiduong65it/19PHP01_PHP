@@ -10,12 +10,13 @@ ORDER BY listPrice DESC
 SELECT * FROM `products` 
 INNER JOIN categories ON categories.categoryID = products.categoryID 
 WHERE categories.categoryName = "Basses" and products.productName LIKE "%o%"
+ORDER BY productName DESC
 -- 4
 SELECT * FROM `products`
 INNER JOIN orderitems ON orderitems.productID = products.productID
 INNER JOIN orders ON orders.orderID = orderitems.orderID
 INNER JOIN customers ON customers.customerID = orders.customerID
-WHERE customers.emailAddress LIKE "%gmail%"
+WHERE customers.emailAddress LIKE "%@gmail.%"
 -- 5
 SELECT * FROM `products` 
 WHERE (listPrice > 300 AND dateAdded LIKE "2014%")  ORDER BY listPrice DESC LIMIT 4
@@ -26,4 +27,4 @@ INNER JOIN customers ON addresses.customerID = customers.customerID
 INNER JOIN orders ON orders.customerID = customers.customerID
 INNER JOIN orderitems ON orderitems.orderID = orders.orderID
 INNER JOIN products ON products.productID = orderitems.productID
-WHERE products.productName = "Yamaha FG700S"
+WHERE products.productName LIKE "Yamaha FG700S"

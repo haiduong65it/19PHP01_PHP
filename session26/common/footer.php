@@ -29,7 +29,10 @@
   //Date picker
   $('#birthday').datepicker({
     autoclose: true
-  })
+  });
+  $(document).ready( function () {
+    $('#table').DataTable();
+} );
 </script>
 </body>
 </html>

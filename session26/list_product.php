@@ -68,10 +68,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<script type="text/javascript" src="jquery.min.js"></script>
   <?php include 'common/footer.php';?>
-<script type="text/javascript">
-  $(document).ready( function () {
-    $('#table').DataTable();
-} );
-</script>
