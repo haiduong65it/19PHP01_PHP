@@ -125,6 +125,7 @@
 		function handleProducts($action, $model){
 			switch ($action) {
 				case 'add_product':
+
 					$this->checkLoginSession();
 					# code...
 					if (isset($_POST['add_product'])) {
@@ -132,16 +133,16 @@
 						$title = $_POST['title'];
 						$description = $_POST['description'];
 						$image = 'default.jpg';
-						if ($_FILES['image']['error'] == 0) {
-				            $avatar = uniqid().'_'.$_FILES['image']['name'];
+						if ($_FILES['image']['error'] === 0) {
+				            $image = uniqid().'_'.$_FILES['image']['name'];
 				            move_uploaded_file($_FILES['image']['tmp_name'], 'webroot/uploads/'.$image);
 				          }
 				        $price = $_POST['price'];
-						if($model->add_product($username, $password, $avatar, $name, $level) === TRUE){
+						if($model->add_product($category_id, $title, $description, $image, $price) === TRUE){
 							header("Location: admin.php?controller=products&action=list_products");
 						}
 					}
-					include 'view/user/add_user.php';
+					include 'view/product/add_product.php';
 					break;
 				case 'list_products':
 					$this->checkLoginSession();

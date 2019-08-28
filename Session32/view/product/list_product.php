@@ -41,7 +41,7 @@
                     <td><?php echo $row['id']?></td>
                     <?php while ($row_ct = $listCategory->fetch_assoc()) {
                     	# code...
-                    	if ( $row_ct['id'] === $row['category_id']) {
+                    	if ( $row_ct['id'] === $row['product_category_id']) {
                     		?>
                     		<td><?php echo $row_ct['name']?></td>
                     	<?php 
